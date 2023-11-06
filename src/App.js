@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Size from './components/Size';
 import Dish from './components/Dish';
 import Order from './components/Order';
+import Cart from './components/Cart';
 
 function App() {
   const [thali, setThali] = useState({ size: "", dishes: [] });
@@ -30,6 +31,7 @@ function App() {
         <Route path="/size" element={ <Size addSize={addSize} thali={thali} />}/>
         <Route path="/dish" element={ <Dish addDish={addDish} thali={thali} />}/>
         <Route path="/order" element={<Order thali={thali} />}/>
+        <Route path="/cart" element={<Cart />}/>
         <Route path="/" element={<Home />}/>
       </Routes>
     </>

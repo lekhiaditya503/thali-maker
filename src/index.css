@@ -29,7 +29,6 @@ button{
   border: 1px solid white;
   margin: 40px auto 0;
   cursor: pointer;
-  opacity: 0.7;
 }
 .container{
   max-width: 600px;
@@ -49,7 +48,7 @@ button{
 }
 
 .container li img{
-  max-width: 40px;
+  max-width: 60px;
 }
 
 /* header */
@@ -115,4 +114,35 @@ li span.active::before{
 }
 .order p{
   margin: 20px auto;
+}
+
+header{
+  padding: 40px;
+}
+
+header img{
+  filter: invert(1);
+  outline: white;
+  
+}
+
+.flex{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.cart{
+  border: solid 1px white;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+}
+
+.cartItem{
+  display: flex;
+  flex-direction: column;
+  gap:5px;
 }
