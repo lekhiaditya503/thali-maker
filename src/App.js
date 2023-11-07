@@ -24,14 +24,18 @@ function App() {
     setThali({ ...thali, dishes: newDishes });
   }
 
+  const clearThali =  () =>{
+    setThali({ size: "", dishes: [] });
+  }
+
   return (
     <>
       <Header />
       <Routes>
         <Route path="/size" element={ <Size addSize={addSize} thali={thali} />}/>
         <Route path="/dish" element={ <Dish addDish={addDish} thali={thali} />}/>
-        <Route path="/order" element={<Order thali={thali} />}/>
-        <Route path="/cart" element={<Cart />}/>
+        <Route path="/order" element={<Order thali={thali} clearThali={clearThali} />}/>
+        <Route path="/cart" element={<Cart clearThali={clearThali} />}/>
         <Route path="/" element={<Home />}/>
       </Routes>
     </>

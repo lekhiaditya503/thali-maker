@@ -23,6 +23,12 @@ const odersSlice = createSlice({
       state.items = existingItems;
      
     },
+    clearCart(state) {
+       state.items = []
+       state.totalQuantity = 0;
+      
+     
+    },
   },
 });
 

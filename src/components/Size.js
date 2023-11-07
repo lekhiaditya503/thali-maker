@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import {motion} from 'framer-motion'
+
 const Size = ({ addSize, thali }) => {
   const size = ['Khali Bali Thali', 'Bahubali Thali', 'Dara Singh Thali'];
 
@@ -12,9 +14,12 @@ const Size = ({ addSize, thali }) => {
         {size.map(base => {
           let spanClass = thali.size === base ? 'active' : '';
           return (
-            <li key={base} onClick={() => addSize(base)}>
+            <motion.li key={base} onClick={() => addSize(base)}
+            whileHover={{ scale: 1.3, originX: 0, color: '#f8e112' }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
               <span className={spanClass}>{ base }</span>
-            </li>
+            </motion.li>
           )
         })}
       </ul>
@@ -22,7 +27,13 @@ const Size = ({ addSize, thali }) => {
       {thali.size && (
         <div className="next">
           <Link to="/dish">
-            <button>Next</button>
+            <motion.button
+              whileHover={{ 
+                scale: 1.1, 
+                textShadow: "0px 0px 8px rgb(255,255,255)",
+                boxShadow: "0px 0px 8px rgb(255,255,255)",
+              }}
+            >Next</motion.button>
           </Link>
         </div>
       )}
